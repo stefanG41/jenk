@@ -3,7 +3,7 @@
 certificatesResolvers:
   http:
     acme:
-      email: "email@example.com"
+      email: "meine@email.de"
       storage: "acme_letsencrypt.json"
       httpChallenge:
         entryPoint: http
@@ -15,14 +15,8 @@ entryPoints:
         entryPoint:
           to: "https"
           scheme: "https"
-
   https:
     address: ":443"
-#    http:
-#      middlewares:
-#        - crowdsec-bouncer@file
-
-
 global:
   checknewversion: true
   sendanonymoususage: false
@@ -35,9 +29,3 @@ providers:
     filename: "./dynamic_conf.yml"
     watch: true
   providersThrottleDuration: 10
-#log:
-#  level: "INFO"
-#  filePath: "/var/log/traefik/traefik.log"
-#accessLog:
-#  filePath: "/var/log/traefik/access.log"
-#  bufferingSize: 100
