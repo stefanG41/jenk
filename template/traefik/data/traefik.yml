@@ -35,10 +35,9 @@ providers:
     filename: "./dynamic_conf.yml"
     watch: true
   providersThrottleDuration: 10
-
-log:
-  level: "INFO"
-  filePath: "/var/log/traefik/traefik.log"
-accessLog:
-  filePath: "/var/log/traefik/access.log"
-  bufferingSize: 100
+#log:
+#  level: "INFO"
+#  filePath: "/var/log/traefik/traefik.log"
+#accessLog:
+#  filePath: "/var/log/traefik/access.log"
+#  bufferingSize: 100
