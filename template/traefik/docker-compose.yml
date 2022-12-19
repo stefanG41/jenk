@@ -9,7 +9,7 @@ services:
       - ./data/traefik.yml:/traefik.yml:ro
       - ./data/acme_letsencrypt.json:/acme_letsencrypt.json
       - ./data/dynamic_conf.yml:/dynamic_conf.yml
-      - /var/log/crowdsec/traefik/:/var/log/traefik/
+#      - /var/log/crowdsec/traefik/:/var/log/traefik/
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
       - "traefik.enable=true"
