@@ -3,7 +3,7 @@ api:
 certificatesResolvers:
   http:
     acme:
-      email: "xgaers@xgaers.de"
+      email: "my@email.de"
       storage: "acme_letsencrypt.json"
       httpChallenge:
         entryPoint: http
