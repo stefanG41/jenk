@@ -18,9 +18,9 @@ entryPoints:
 
   https:
     address: ":443"
-    http:
-      middlewares:
-        - crowdsec-bouncer@file
+#    http:
+#      middlewares:
+#        - crowdsec-bouncer@file
 
 
 global:
