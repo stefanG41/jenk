@@ -1,4 +1,4 @@
-api:    #wurde geandert und noch mal angepasst
+api:    #t
   dashboard: true
 certificatesResolvers:
   http:
