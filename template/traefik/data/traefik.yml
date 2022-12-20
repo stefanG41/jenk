@@ -1,4 +1,4 @@
-api:
+ api:
   dashboard: true
 certificatesResolvers:
   http:
