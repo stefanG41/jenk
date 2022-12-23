@@ -6,7 +6,7 @@ services:
     container_name: wordpress-$DOMIAN
     environment:
       WORDPRESS_DB_HOST: wordpress-db
-      WORDPRESS_DB_USER: $DBUSER
+      WORDPRESS_DB_USER: $DOMAIN
       WORDPRESS_DB_PASSWORD: $PASSWORD
       WORDPRESS_DB_NAME: wordpress-$DOMAIN
     volumes:
