@@ -9,6 +9,7 @@ services:
       - ./data/traefik.yml:/traefik.yml:ro
       - ./data/acme_letsencrypt.json:/acme_letsencrypt.json
       - ./data/dynamic_conf.yml:/dynamic_conf.yml
+      #- /var/log/crowdsec/traefik/:/var/log/traefik/
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
       - "traefik.enable=true"
@@ -25,13 +26,18 @@ services:
     security_opt:
       - no-new-privileges:true
     networks:
-      - proxy
+      proxy:
+      #crowdsec:
+        #ipv4_address: 172.31.0.10
     hostname: traefik
     ports:
       - "80:80"
       - "443:443"
+      
 networks:
   proxy:
     name: proxy
     driver: bridge
     attachable: true
+  #crowdsec:
+    #external: true
