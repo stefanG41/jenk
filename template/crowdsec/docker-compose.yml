@@ -20,6 +20,21 @@ services:
       crowdsec:
         ipv4_address: 172.31.0.2
     hostname: crowdsec
+    
+  #bouncer-traefik:
+    #container_name: crowdsec-bouncer-traefik
+    #image: fbonalair/traefik-crowdsec-bouncer:latest
+    #environment:
+      #CROWDSEC_BOUNCER_API_KEY: ${TRAEFIK_BOUNCER_KEY}
+      #CROWDSEC_AGENT_HOST: crowdsec:8080
+    #restart: unless-stopped
+    #depends_on:
+      #- crowdsec
+    #networks:
+      #crowdsec:
+        #ipv4_address: 172.31.0.3
+    #hostname: crowdsec-bouncer-traefik
+
 networks:
   crowdsec:
     name: crowdsec
