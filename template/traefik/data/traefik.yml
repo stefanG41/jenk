@@ -1,5 +1,6 @@
-api:    #new test12345
+api:
   dashboard: true
+  
 certificatesResolvers:
   http:
     acme:
@@ -7,6 +8,7 @@ certificatesResolvers:
       storage: "acme_letsencrypt.json"
       httpChallenge:
         entryPoint: http
+        
 entryPoints:
   http:
     address: ":80"
@@ -17,9 +19,14 @@ entryPoints:
           scheme: "https"
   https:
     address: ":443"
+    #http:
+      #middlewares:
+        #- crowdsec-bouncer@file
+        
 global:
   checknewversion: true
   sendanonymoususage: false
+
 providers:
   docker:
     endpoint: "unix:///var/run/docker.sock"
@@ -29,3 +36,10 @@ providers:
     filename: "./dynamic_conf.yml"
     watch: true
   providersThrottleDuration: 10
+
+#log:
+  #level: "INFO"
+  #filePath: "/var/log/traefik/traefik.log"
+#accessLog:
+  #filePath: "/var/log/traefik/access.log"
+  #bufferingSize: 100
