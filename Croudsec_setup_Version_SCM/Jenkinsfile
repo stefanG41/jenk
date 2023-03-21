@@ -6,7 +6,7 @@ pipeline {
    parameters {
        choice(name: 'ENV_AGENT', choices: ['DEV', 'STAG', 'PROD'], description: 'The environment agent to deploy to ${ENV_AGENT}')
        choice(name: 'VERSION_IS', choices: ['latest','v1.4.5','v1.4.6'], description: 'What Version is installed')
-       choice(name: 'VERSION_SHOULD', choices: ['latest','v1.4.5','v1.4.6','v1.4.7','v1.4.8','v1.4.9'], description: 'What Version need to be installed')
+       choice(name: 'VERSION_SHOULD', choices: ['latest','v1.4.5','v1.4.6','v1.4.7','v1.4.8','v1.4.90'], description: 'What Version need to be installed')
     }
 
 
