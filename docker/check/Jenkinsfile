@@ -11,14 +11,9 @@ pipeline {
     stages {
         stage('Check running docker container') {
             steps {
-                sh '''docker ps'''
+                sh '''docker ps > ausgabe.txt'''
+                archiveArtifacts artifacts: 'ausgabe.txt', onlyIfSuccessful: true
             }
-		   }
-
-        stage('Check running docker version') {
-            steps {
-                sh '''docker version'''
-            }
-		   }    
+		}   
     }
 }
