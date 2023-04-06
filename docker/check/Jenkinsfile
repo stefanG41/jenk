@@ -1,0 +1,18 @@
+pipeline {
+
+    agent { label "${ENV_AGENT}" }
+
+
+   parameters {
+       choice(name: 'ENV_AGENT', choices: ['DEV', 'STAG', 'PROD'], description: 'The environment agent to deploy to ${ENV_AGENT}')
+    }
+
+
+    stages {
+        stage('Check running docker container') {
+            steps {
+                sh '''docker ps'''
+            }
+		   } 
+    }
+}
