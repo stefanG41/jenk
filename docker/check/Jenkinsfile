@@ -8,8 +8,9 @@ pipeline {
     }
 
 
-stage('Meine Bühne') {
-    steps {
+   stages {
+
+   steps {
         script {
             def cmd = "mein befehl"
             def proc = cmd.execute()
@@ -18,8 +19,6 @@ stage('Meine Bühne') {
     }
 }
 
-
-    stages {
         stage('Check running docker container') {
             steps {
                 sh '''docker ps > ausgabe.txt'''
