@@ -9,16 +9,6 @@ pipeline {
 
 
    stages {
-
-   steps {
-        script {
-            def cmd = "mein befehl"
-            def proc = cmd.execute()
-            proc.waitForProcessOutput(System.out, System.err)
-        }
-    }
-}
-
         stage('Check running docker container') {
             steps {
                 sh '''docker ps > ausgabe.txt'''
