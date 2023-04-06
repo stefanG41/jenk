@@ -8,11 +8,22 @@ pipeline {
     }
 
 
+stage('Meine Bühne') {
+    steps {
+        script {
+            def cmd = "mein befehl"
+            def proc = cmd.execute()
+            proc.waitForProcessOutput(System.out, System.err)
+        }
+    }
+}
+
+
     stages {
         stage('Check running docker container') {
             steps {
-                sh '''docker ps'''
-                
+                sh '''docker ps > ausgabe.txt'''
+                archiveArtifacts artifacts: 'ausgabe.txt', onlyIfSuccessful: true
             }
 		}   
     }
