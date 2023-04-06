@@ -13,6 +13,12 @@ pipeline {
             steps {
                 sh '''docker ps'''
             }
-		   } 
+		   }
+
+        stage('Check running docker version') {
+            steps {
+                sh '''docker version'''
+            }
+		   }    
     }
 }
