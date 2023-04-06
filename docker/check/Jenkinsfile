@@ -11,8 +11,8 @@ pipeline {
     stages {
         stage('Check running docker container') {
             steps {
-                sh '''docker ps > ausgabe.txt'''
-                archiveArtifacts artifacts: 'ausgabe.txt', onlyIfSuccessful: true
+                sh '''docker ps'''
+                
             }
 		}   
     }
