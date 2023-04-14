@@ -25,7 +25,7 @@ services:
       DB_USERNAME: DBUSER
       DB_PASSWORD: PASSWORDS
       DB_HOST: 'postgres'
-      BASE_URL: "http://FQDN"
+      BASE_URL: "https://FQDN"
 
     labels:
       - "traefik.enable=true"
