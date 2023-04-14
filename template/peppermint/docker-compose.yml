@@ -10,7 +10,7 @@ services:
     environment: 
       POSTGRES_USER: DBUSER
       POSTGRES_PASSWORD: PASSWORDS
-      POSTGRES_DB: DB
+      POSTGRES_DB: DBNAME
 
   client:
     container_name: peppermint
@@ -25,17 +25,17 @@ services:
       DB_USERNAME: DBUSER
       DB_PASSWORD: PASSWORDS
       DB_HOST: 'postgres'
- #    # BASE_URL: "http://localhost:5000"
+      BASE_URL: "http://FQDN"
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.peppermin-ssl.entrypoints=https"
-      - "traefik.http.routers.peppermin-ssl.rule=Host(`FQDN`)"
-      - "traefik.http.routers.peppermin-ssl.middlewares=default@file"
-      - "traefik.http.routers.peppermin-ssl.tls=true"
-      - "traefik.http.routers.peppermin-ssl.tls.certresolver=http"
-      - "traefik.http.routers.peppermin-ssl.service=peppermin-ssl"
-      - "traefik.http.services.peppermin-ssl.loadbalancer.server.port=80"
+      - "traefik.http.routers.peppermint-ssl.entrypoints=https"
+      - "traefik.http.routers.peppermint-ssl.rule=Host(`FQDN`)"
+      - "traefik.http.routers.peppermint-ssl.middlewares=default@file"
+      - "traefik.http.routers.peppermint-ssl.tls=true"
+      - "traefik.http.routers.peppermint-ssl.tls.certresolver=http"
+      - "traefik.http.routers.peppermint-ssl.service=peppermint-ssl"
+      - "traefik.http.services.peppermint-ssl.loadbalancer.server.port=80"
       - "traefik.docker.network=proxy"
     networks:
       - proxy
