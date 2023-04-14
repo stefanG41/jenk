@@ -11,6 +11,8 @@ services:
       POSTGRES_USER: DBUSER
       POSTGRES_PASSWORD: PASSWORDS
       POSTGRES_DB: DBNAME
+      ports:
+          - "5432:5432"      
 
   client:
     container_name: peppermint
