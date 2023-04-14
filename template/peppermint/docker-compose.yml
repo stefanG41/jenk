@@ -35,7 +35,7 @@ services:
       - "traefik.http.routers.peppermint-ssl.tls=true"
       - "traefik.http.routers.peppermint-ssl.tls.certresolver=http"
       - "traefik.http.routers.peppermint-ssl.service=peppermint-ssl"
-      - "traefik.http.services.peppermint-ssl.loadbalancer.server.port=80"
+      - "traefik.http.services.peppermint-ssl.loadbalancer.server.port=5000"
       - "traefik.docker.network=proxy"
     networks:
       - proxy
